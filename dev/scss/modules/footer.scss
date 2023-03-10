@@ -13,6 +13,9 @@
       line-height: 150%;
       color: #FFFFFF;
       opacity: 0.5;
+      @media (max-width: 426px) {
+        font-size: 9px;
+      }
     }
   }
 
