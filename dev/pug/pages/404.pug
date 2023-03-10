@@ -1,0 +1,24 @@
+extends ../layout/main
+
+block variables
+  - const title = 'Страница не найдена';
+
+block libs-css
+  link(rel="stylesheet" type='text/css' href="./css/404.css")
+
+block content
+  include ../modules/header
+  main.main
+    .main-blank
+      .container
+        .page-404
+          .page-404__bg
+            img(data-src="./img/global/404.svg" width=844 height=323 alt="").lazy
+          .page-404__content
+            .page-404__title
+              h1.h2 #{title}
+            .page-404__desc
+              .text.text-gray Извините. Содержимое, которое вы ищете, не существует. Либо оно был удален, либо вы неправильно ввели ссылку.
+            .page-404__link
+              a(href="#") Вернуться на главную
+  include ../modules/footer

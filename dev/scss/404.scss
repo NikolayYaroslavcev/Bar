@@ -1,0 +1,41 @@
+@import './utils/index';
+
+.page-404 {
+  padding-top: 80px;
+
+  @include sm-block() {
+    padding-top: 40px;
+  }
+
+  @include xxs-block() {
+    padding-top: 20px;
+  }
+
+  &__bg {
+    max-width: 844px;
+    margin: 0 auto;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    max-width: 364px;
+    margin: -10% auto 0;
+    text-align: center;
+
+    @include xxs-block() {
+      margin-top: 15px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__desc {
+    margin-bottom: 20px;
+  }
+}

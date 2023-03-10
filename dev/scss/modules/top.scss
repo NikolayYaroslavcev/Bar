@@ -1,0 +1,124 @@
+.top {
+  padding-top: 238px;
+  @media (max-width: 770px) {
+    padding-top: 75px;
+  }
+  @media (max-width: 426px) {
+    padding-top: 45px;
+  }
+
+  .container {
+    .top-wrapper {
+      display: flex;
+      gap: 44px;
+      text-align: center;
+      @media (max-width: 770px) {
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .top-events {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        max-width: 23.5rem;
+        @media(max-width: 767px) {
+          gap: 15px;
+        }
+        @media (max-width: 770px) {
+          max-width: 100%;
+        }
+
+        .button {
+          margin: 0 auto 10px auto;
+          background-color: #FFFFFF;
+          border-radius: 5px;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 150%;
+          text-align: center;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          color: #210E09;
+          padding: 10px 20px;
+        }
+
+        .events-title {
+          font-weight: 400;
+          line-height: 150%;
+          text-align: center;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          color: #FFFFFF;
+          font-size: calc(25px + 15 * (100vw / 1440));
+
+          @media(max-width: 767px) {
+            font-size: calc(25px + (30 + 15 * 0.7) * ((100vw - 320px) / 1440));
+          }
+
+        }
+
+        .event-about {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 150%;
+          text-align: center;
+          color: #FFFFFF;
+
+          .events-text-one {
+          }
+
+          .events-text-two {
+          }
+
+          .events-text-three {
+          }
+        }
+
+        .events-button {
+         margin: 0 auto;
+          border: 2px solid #D5621D;
+          border-radius: 5px;
+          padding: 15px 30px;
+          transition: all .3s ease-in;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #D5621D;
+          }
+
+          a {
+            color: #FFFFFF;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 150%;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+          }
+
+          @media (max-width: 770px) {
+            padding: 7.5px 15px;
+          }
+        }
+
+      }
+
+      .top-img {
+        flex: 1 1 auto;
+        background: url("../../img/main/top/topBg.png") center no-repeat;
+        border-radius: 5px;
+        background-size: cover;
+        width: 100%;
+
+      }
+
+      .top-tourists {
+
+      }
+
+    }
+  }
+}

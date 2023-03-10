@@ -1,0 +1,56 @@
+-
+  const browserList = [
+    {
+      link: 'https://support.apple.com/en-by/guide/safari/sfri40598/mac',
+      img: 'safari',
+      name: 'Apple Safari',
+      color: '#00A0E6',
+    },
+    {
+      link: 'https://www.opera.com/',
+      img: 'opera',
+      name: 'Opera',
+      color: '#F25648',
+    },
+    {
+      link: 'https://www.mozilla.org/en-US/firefox/new/',
+      img: 'firefox',
+      name: 'Mozilla Firefox',
+      color: '#F19A2A',
+    },
+    {
+      link: 'https://www.google.com/chrome/',
+      img: 'chrome',
+      name: 'Google Chrome',
+      color: '#F19A2A',
+    },
+  ];
+
+doctype html
+html(lang="ru-RU")
+  head
+  meta(charset="utf-8")
+  title Вы используете браузер Internet Explorer
+  link(rel="stylesheet" type='text/css' href="./css/fonts.css")
+  meta(name="viewport" content="width=device-width, initial-scale=1")
+  link(rel="stylesheet" type='text/css' href="./css/ie.css")
+  body
+    .ie
+      .ie-container
+        .ie-head
+          h1 Вы используете браузер Internet Explorer
+          .text-gray Данный сайт построен на передовых, современных технологиях и не поддерживает Internet Explorer. Настоятельно рекомендуем выбрать и установить любой из современных браузеров. Это бесплатно и займет всего несколько минут
+        ul.ie-browser
+          each item in browserList
+            li.ie-browser__tile
+              a(href=item.link target="_blank").ie-browser__item
+                img(src="./img/ie/" + item.img + ".svg" alt="").ie-browser__img
+                .ie-browser__name(style="color:" + item.color + ";") #{item.name}
+        .ie-contacts
+          .ie-contacts__title
+            h4 Наши контакты
+          ul.ie-contacts__list
+            li.ie-contacts__tile
+              a(href="mailto:info@zrpt.by").ie-contacts__link info@zrpt.by
+            li.ie-contacts__tile
+              a(href="tel:+375173754123").ie-contacts__link +375 (17) 375-41-23

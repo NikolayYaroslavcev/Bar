@@ -1,0 +1,170 @@
+@use 'sass:math';
+
+@mixin absolute-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin triangle($width, $height, $bg, $direction) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+
+  @if $direction == top {
+    border-width: 0 $width * 0.5 + px $height + px $width * 0.5 + px;
+    border-color: transparent transparent $bg transparent;
+  }
+  @if $direction == right {
+    border-width: $height * 0.5 + px 0 $height * 0.5 + px $width + px;
+    border-color: transparent transparent transparent $bg;
+  }
+  @if $direction == bottom {
+    border-width: $height + px $width * 0.5 + px 0 $width * 0.5 + px;
+    border-color: $bg transparent transparent transparent;
+  }
+  @if $direction == left {
+    border-width: $height * 0.5 + px $width + px $height * 0.5 + px 0;
+    border-color: transparent $bg transparent transparent;
+  }
+  @if $direction == topLeft {
+    border-width: $height + px $width + px 0 0;
+    border-color: $bg transparent transparent transparent;
+  }
+  @if $direction == topRight {
+    border-width: 0 $width + px $height + px 0;
+    border-color: transparent $bg transparent transparent;
+  }
+  @if $direction == bottomLeft {
+    border-width: $height + px 0 0 $width + px;
+    border-color: transparent transparent transparent $bg;
+  }
+  @if $direction == bottomRight {
+    border-width: 0 0 $height + px $width + px;
+    border-color: transparent transparent $bg transparent;
+  }
+}
+
+@mixin border-radius($topLeft, $topRight, $bottomRight, $bottomLeft) {
+  -webkit-border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+  -moz-border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+  -ms-border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+  -o-border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+  border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+}
+
+@mixin lh($fontSize, $lineHeight) {
+  line-height: math.div($lineHeight, $fontSize);
+}
+
+@mixin font($fontSize) {
+  font-size: math.div($fontSize, $fontSizeMain) + rem;
+}
+
+@function toVw($n) {
+  $width: var(--vwIdth);
+  @return calc(100vw / (#{$width} / #{$n}));
+}
+
+@function toVwVal($n) {
+  @return math.div(100vw, math.div(1920px, $n));
+}
+
+@function toVwXmdVal($n) {
+  @return math.div(100vw, math.div(1180px, $n));
+}
+
+@function toVwSmVal($n) {
+  @return math.div(100vw, math.div(990px, $n));
+}
+
+@function toVwXxsVal($n) {
+  @return math.div(100vw, math.div(375px, $n));
+}
+
+@mixin hover() {
+  @media screen and (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin ifScreenDevice() {
+  @media screen and (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+@mixin ifTouchDevice() {
+  @media screen and (hover: none) and (pointer: coarse) {
+    @content;
+  }
+}
+
+@mixin common-list-style {
+  padding-left: 30px;
+
+  & > li {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -25px;
+    }
+  }
+}
+
+@mixin ol-list {
+  @include common-list-style;
+
+  counter-reset: counter;
+
+  & > li {
+    &::before {
+      content: counter(counter);
+      counter-increment: counter;
+      top: 0px;
+      @include font(12);
+      color: $active-color;
+    }
+  }
+}
+
+@mixin ul-list {
+  @include common-list-style;
+
+  & > li {
+    position: relative;
+
+    &::before {
+      content: '';
+      top: 9px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: $active-color;
+    }
+  }
+}

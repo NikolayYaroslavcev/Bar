@@ -1,0 +1,122 @@
+.contacts {
+  margin-bottom: 100px;
+  @media (max-width: 770px) {
+    margin-bottom: 40px;
+  }
+
+  .container {
+    .contacts-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      .contacts-about {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+        margin-bottom: 80px;
+        @media (max-width: 770px) {
+          margin-bottom: 40px;
+        }
+
+        .contacts-button {
+          background: #FFFFFF;
+          border-radius: 5px;
+          text-align: center;
+          margin: 0 auto;
+
+          a {
+            font-weight: 700;
+            font-size: 14px;
+            padding: 10px 20px;
+            line-height: 150%;
+            text-align: center;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #210E09;
+
+          }
+        }
+
+        .contacts-title {
+          font-weight: 400;
+          line-height: 150%;
+          text-align: center;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          color: #FFFFFF;
+          font-size: calc(25px + 15 * (100vw / 1440));
+
+          @media(max-width: 767px) {
+            font-size: calc(25px + (30 + 15 * 0.7) * ((100vw - 320px) / 1440));
+          }
+        }
+      }
+
+      .contacts-items {
+        display: flex;
+        gap: 24px;
+        @media (max-width: 1253px) {
+          gap: 15px;
+        }
+        @media (max-width: 770px) {
+          flex-direction: column-reverse;
+        }
+
+
+        .contacts-block {
+          background: rgba(213, 98, 29, 0.1);
+          border: 2px solid #D5621D;
+          border-radius: 5px;
+          padding: 50px;
+          display: flex;
+          flex-direction: column;
+          gap: 35px;
+          flex: 0 0 30%;
+          @media (max-width: 1253px) {
+            padding: 10px;
+            gap: 15px;
+          }
+
+          .block {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            @media (max-width: 1253px) {
+              gap: 10px;
+            }
+
+            span {
+              width: 100%;
+              opacity: 0.5;
+              border: 1px solid #FFFFFF;
+            }
+
+            .title {
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 150%;
+              letter-spacing: 0.05em;
+              text-transform: uppercase;
+              color: #FFFFFF;
+              @media (max-width: 321px) {
+                font-size: 15px;
+              }
+            }
+
+            .explanation {
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 150%;
+              color: #FFFFFF;
+            }
+          }
+        }
+
+        .contacts-map {
+          flex: 1 1 auto;
+        }
+      }
+    }
+  }
+
+}

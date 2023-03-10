@@ -1,0 +1,10 @@
+.breadcrumbs
+  div(class="bx-breadcrumb" + (isWhiteBreadcrumbs ? " bx-breadcrumb--white" : ""))
+    .bx-breadcrumb-item(itemscope="" itemtype="" itemref="")
+      a(href="/" title="" itemprop="")
+        span(itemprop="title") Главная
+    .bx-breadcrumb-item
+      a(href="/" title="" itemprop="")
+        span(itemprop="title") Промежуточный пункт
+    .bx-breadcrumb-item
+      span #{title}

@@ -1,0 +1,62 @@
+-
+  const navBar = [
+    {
+      title: 'Главная',
+      path: 'home'
+    },
+    {
+      title: 'Меню',
+      path: 'menu'
+    },
+    {
+      title: 'Афиша',
+      path: 'playbill'
+    },
+    {
+      title: 'Сотрудничество',
+      path: 'collaboration'
+    },
+    {
+      title: 'Галерея',
+      path: 'gallery'
+    },
+    {
+      title: 'Новости',
+      path: 'news'
+    }
+  ];
+
+header.header
+  .container
+    .header-body
+      .header-logo
+        a.logo-imag
+          img(src="img/header/logo.png" alt="logo")
+      .header-navigation
+        nav.menu__body
+          ul.menu__list
+            each item in navBar
+              li.menu__item
+                a.menu__link(href=`./${item.path}`) #{item.title}
+      .header-button
+        a(href='#') Бронировать
+      button(data-action="burger-menu-switcher").header-burger
+        -for (let i = 0; i < 3; i++)
+                span
+
+
+
+
+
+
+
+  //  .header-container
+  //    button(data-action="burger-menu-switcher").header-burger
+  //      -for(let i=0; i<3; i++)
+  //        span
+  //    .header-vi
+  //      button.vi-sw-on-btn
+  //        span Версия для слабовидящих
+  //  include ./vi
+  //.header-dropdown(data-burger-menu)
+  //  .container Header-dropdown

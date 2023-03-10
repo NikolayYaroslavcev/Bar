@@ -1,0 +1,19 @@
+.footer {
+  margin-top: auto;
+  opacity: 0.5;
+  border: 1px solid #FFFFFF;
+  .footer-wrapper{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    p{
+      padding: 15px 0;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #FFFFFF;
+      opacity: 0.5;
+    }
+  }
+
+}

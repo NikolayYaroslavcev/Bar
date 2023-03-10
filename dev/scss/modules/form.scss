@@ -1,0 +1,278 @@
+.form {
+  &-item {
+    display: block;
+    width: 100%;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    &__name {
+      padding-left: 11px;
+      margin-bottom: 8px;
+      @include font(14);
+      color: $black;
+
+      &.has-star {
+        position: relative;
+
+        &::before {
+          content: '*';
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: $active-color;
+        }
+      }
+    }
+
+    &__submit {
+      display: flex;
+      align-items: center;
+
+      @include xxs-block() {
+        flex-direction: column-reverse;
+      }
+
+      &-text {
+        padding-left: 15px;
+        @include font(12);
+
+        @include xxs-block() {
+          padding: 0 0 15px 0;
+        }
+      }
+    }
+
+    [type='file'] {
+      display: none;
+    }
+
+    [type='text'],
+    [type='tel'],
+    [type='email'],
+    [type='password'],
+    textarea,
+    select,
+    .jq-selectbox__select-text {
+      display: block;
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid $black;
+      @include font(15);
+      color: $black;
+      transition: border-color $time ease-in-out;
+      border-radius: $border-radius;
+
+      @include xxs-block() {
+        padding: 10px;
+      }
+
+      @include placeholder() {
+        @include font(15);
+        color: $black;
+      }
+    }
+
+    textarea {
+      height: 120px;
+      max-width: 100%;
+      resize: noe;
+    }
+
+    select {
+      appearance: none;
+    }
+
+    &::after {
+      content: attr(data-error-text);
+      position: absolute;
+      top: 100%;
+      color: $active-color;
+      @include font(12);
+      width: 100%;
+      transition: transform $time ease-in-out, opacity $time ease-in-out;
+      transform: translateY(100%);
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &.invalid {
+      [type='text'],
+      [type='tel'],
+      [type='email'],
+      [type='password'],
+      textarea,
+      select,
+      .checkbox .checkbox-marker,
+      .jq-selectbox__select-text {
+        border-color: $active-color;
+      }
+
+      &::after {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0%);
+      }
+
+      .input-file__note {
+        color: $active-color;
+      }
+    }
+  }
+}
+
+.checkbox {
+  cursor: pointer;
+  white-space: nowrap;
+
+  &-marker {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $black;
+    transition: all $time ease-in-out;
+    border-radius: 2px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 8px;
+      height: 5px;
+      border-bottom: 1px solid $black;
+      border-left: 1px solid $black;
+      transition: inherit;
+      transform: translate(-50%, -50%) scale(0) rotate(45deg);
+    }
+  }
+
+  &-text {
+    padding-left: 8px;
+    vertical-align: top;
+    @include font(12);
+    white-space: break-spaces;
+    color: $black;
+    margin-top: 2px;
+  }
+
+  [type='checkbox'] {
+    display: none;
+
+    &:checked {
+      & ~ .checkbox-marker {
+        border-color: $black;
+
+        &::after {
+          transform: translate(-50%, -50%) scale(1) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  @include hover() {
+    .checkbox-marker {
+      border-color: $black;
+    }
+  }
+}
+
+.jq-selectbox {
+  display: flex;
+  width: 100%;
+
+  &__select {
+    width: 100%;
+  }
+
+  &__trigger {
+  }
+
+  &__dropdown {
+    li {
+      &.disabled {
+      }
+
+      &.selected {
+      }
+    }
+  }
+
+  &.opened {
+    .jq-selectbox__trigger-arrow {
+      transform: rotateX(180deg);
+    }
+  }
+
+  & ~ .select-arrow {
+    display: none;
+  }
+}
+
+.input-file {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  font-weight: 600;
+  @include font(14);
+  color: $black;
+  cursor: pointer;
+  margin-right: 15px;
+  transition: color $time ease-in-out;
+
+  &__list {
+    &-item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    &-name {
+      max-width: calc(100% - 100px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include font(12);
+      color: #0029fe;
+    }
+
+    &-size {
+      margin: 0 10px;
+      white-space: nowrap;
+      font-weight: 600;
+      @include font(10);
+      color: $black;
+    }
+
+    &-cross {
+      width: 7px;
+      height: 7px;
+    }
+  }
+
+  &__note {
+    transition: color $time ease-in-out;
+    @include font(12);
+    color: $black;
+  }
+
+  .icon {
+    fill: transparent;
+    stroke: $black;
+    transition: stroke $time ease-in-out;
+    width: 20px;
+    height: 20px;
+  }
+
+  @include hover() {
+    color: $active-color;
+
+    .icon {
+      stroke: $active-color;
+    }
+  }
+}

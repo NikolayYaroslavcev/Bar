@@ -1,0 +1,223 @@
+-
+    const loudspeakers = [
+        {
+            title: 'Acoustic system BELL Top 600W x 2',
+            path: 'Acoustic system BELL Top 600W x 2'
+        },
+        {
+            title: 'Acoustic system BELL Mid 600W x 2',
+            path: 'Acoustic system BELL Mid 600W x 2'
+        },
+        {
+            title: 'Acoustic system BELL Sub 1000W x 2',
+            path: 'Acoustic system BELL Sub 1000W x 2'
+        },
+        {
+            title: 'Front monitor Yamaha SM12V 300w x 2',
+            path: 'Front monitor Yamaha SM12V 300w x 2'
+        },
+        {
+            title: 'Backside monitor Dynacord 500W x 2',
+            path: 'Backside monitor Dynacord 500W x 2'
+        },
+    ];
+
+
+-
+    const amplifier = [
+        {
+            title: 'Acoustic system BELL Top 600W x 2',
+            path: 'Acoustic system BELL Top 600W x 2'
+        },
+        {
+            title: 'Acoustic system BELL Mid 600W x 2',
+            path: 'Acoustic system BELL Mid 600W x 2'
+        },
+        {
+            title: 'Acoustic system BELL Sub 1000W x 2',
+            path: 'Acoustic system BELL Sub 1000W x 2'
+        },
+        {
+            title: 'Front monitor Yamaha SM12V 300w x 2',
+            path: 'Front monitor Yamaha SM12V 300w x 2'
+        },
+        {
+            title: 'Backside monitor Dynacord 500W x 2',
+            path: 'Backside monitor Dynacord 500W x 2'
+        },
+    ];
+
+-
+    const fon = [
+        {
+            title: 'Acoustic system BELL Top 600W x 2',
+            path: 'Acoustic system BELL Top 600W x 2'
+        },
+        {
+            title: 'Acoustic system BELL Mid 600W x 2',
+            path: 'Acoustic system BELL Mid 600W x 2'
+        },
+        {
+            title: 'Acoustic system BELL Sub 1000W x 2',
+            path: 'Acoustic system BELL Sub 1000W x 2'
+        },
+        {
+            title: 'Front monitor Yamaha SM12V 300w x 2',
+            path: 'Front monitor Yamaha SM12V 300w x 2'
+        },
+        {
+            title: 'Backside monitor Dynacord 500W x 2',
+            path: 'Backside monitor Dynacord 500W x 2'
+        },
+    ];
+
+-
+    const backline = [
+        {
+            title: 'Acoustic system BELL Top 600W x 2',
+            path: 'Acoustic system BELL Top 600W x 2'
+        },
+        {
+            title: 'Acoustic system BELL Mid 600W x 2',
+            path: 'Acoustic system BELL Mid 600W x 2'
+        },
+        {
+            title: 'Acoustic system BELL Sub 1000W x 2',
+            path: 'Acoustic system BELL Sub 1000W x 2'
+        },
+        {
+            title: 'Front monitor Yamaha SM12V 300w x 2',
+            path: 'Front monitor Yamaha SM12V 300w x 2'
+        },
+        {
+            title: 'Backside monitor Dynacord 500W x 2',
+            path: 'Backside monitor Dynacord 500W x 2'
+        },
+    ];
+
+-
+    const microphoneSet = [
+        {
+            title: 'Acoustic system BELL Top 600W x 2',
+            path: 'Acoustic system BELL Top 600W x 2'
+        },
+        {
+            title: 'Acoustic system BELL Mid 600W x 2',
+            path: 'Acoustic system BELL Mid 600W x 2'
+        },
+        {
+            title: 'Acoustic system BELL Sub 1000W x 2',
+            path: 'Acoustic system BELL Sub 1000W x 2'
+        },
+        {
+            title: 'Front monitor Yamaha SM12V 300w x 2',
+            path: 'Front monitor Yamaha SM12V 300w x 2'
+        },
+        {
+            title: 'Backside monitor Dynacord 500W x 2',
+            path: 'Backside monitor Dynacord 500W x 2'
+        },
+    ];
+
+-
+    const djEquipment = [
+        {
+            title: 'Acoustic system BELL Top 600W x 2',
+            path: 'Acoustic system BELL Top 600W x 2'
+        },
+        {
+            title: 'Acoustic system BELL Mid 600W x 2',
+            path: 'Acoustic system BELL Mid 600W x 2'
+        },
+        {
+            title: 'Acoustic system BELL Sub 1000W x 2',
+            path: 'Acoustic system BELL Sub 1000W x 2'
+        },
+        {
+            title: 'Front monitor Yamaha SM12V 300w x 2',
+            path: 'Front monitor Yamaha SM12V 300w x 2'
+        },
+        {
+            title: 'Backside monitor Dynacord 500W x 2',
+            path: 'Backside monitor Dynacord 500W x 2'
+        },
+    ];
+
+
+section.tehrader
+    .container-new
+        .tehrader-wrapper
+            .tehrader-header
+                a(href="#").button Top “Manhattan” party
+                h2.tehrader-title ТЕхрайдер
+            .tehrader-contents
+                .footer-information
+                    .information.spollers(data-spollers)(data-one-spoller)
+                        .footer-information-content.spollers__item
+                            .information-title.spollers__title(data-spoller) Loudspeakers
+                            nav.information-body.spollers__body
+                                ul.information-list
+                                    each item in loudspeakers
+                                        li.information-item
+                                            a.information-link(href=`./${item.path}`) #{item.title}
+                        .footer-information-content.spollers__item
+                            .information-title.spollers__title(data-spoller) Amplifier
+                            nav.information-body.spollers__body
+                                ul.information-list
+                                    each item in amplifier
+                                        li.information-item
+                                            a.information-link(href=`./${item.path}`) #{item.title}
+                        .footer-information-content.spollers__item
+                            .information-title.spollers__title(data-spoller) FOH
+                            nav.information-body.spollers__body
+                                ul.information-list
+                                    each item in fon
+                                        li.information-item
+                                            a.information-link(href=`./${item.path}`) #{item.title}
+                        .footer-information-content.spollers__item
+                            .information-title.spollers__title(data-spoller) Backline
+                            nav.information-body.spollers__body
+                                ul.information-list
+                                    each item in backline
+                                        li.information-item
+                                            a.information-link(href=`./${item.path}`) #{item.title}
+                        .footer-information-content.spollers__item
+                            .information-title.spollers__title(data-spoller) Microphone set
+                            nav.information-body.spollers__body
+                                ul.information-list
+                                    each item in microphoneSet
+                                        li.information-item
+                                            a.information-link(href=`./${item.path}`) #{item.title}
+                        .footer-information-content.spollers__item
+                            .information-title.spollers__title(data-spoller) DJ equipment
+                            nav.information-body.spollers__body
+                                ul.information-list
+                                    each item in djEquipment
+                                        li.information-item
+                                            a.information-link(href=`./${item.path}`) #{item.title}
+                //.tehrader-popap
+                .tehrader-sound
+                    h3.sound-title Звукорежиссеры клуба МАНХЭТТЕН
+                    .sound-blocks
+                        .sound-block
+                            img(src="img/main/tehrader/izotov.png" alt="Изотов Константин")
+                            h4.block-title Изотов Константин
+                            .block-icons
+                                    a(href='#')
+                                        svg.icon
+                                            use(href=`./img/main/tehrader/icons/vk.svg#vk`)
+                                    a(href='#')
+                                        svg.icon
+                                            use(href=`./img/main/tehrader/icons/telegram.svg#telegram`)
+                        .sound-block
+                            img(src="img/main/tehrader/khoziev.png" alt="Давид Хозиев")
+                            h4.block-title Давид Хозиев
+                            .block-icons
+                                    a(href='#')
+                                        svg.icon
+                                            use(href=`./img/main/tehrader/icons/vk.svg#vk`)
+                                    a(href='#')
+                                        svg.icon
+                                            use(href=`./img/main/tehrader/icons/telegram.svg#telegram`)
+
+

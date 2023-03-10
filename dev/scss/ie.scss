@@ -1,0 +1,166 @@
+@import './utils/index';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font;
+  background: $gray-bg;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0 auto 10px;
+  font-weight: 600;
+  @include font(28);
+
+  @include sm-block() {
+    @include font(22);
+  }
+}
+
+h4 {
+  margin: 0 auto 10px;
+  font-weight: 600;
+  @include font(22);
+
+  @include sm-block() {
+    @include font(20);
+  }
+}
+
+.ie {
+  padding: 130px 20px 40px;
+
+  @include sm-block() {
+    padding: 30px 20px;
+  }
+
+  &-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &-head {
+    max-width: 671px;
+    margin: 0 auto 70px;
+
+    @include sm-block() {
+      margin-bottom: 35px;
+    }
+  }
+
+  &-body {
+    width: 100%;
+    align-self: center;
+    margin: auto;
+  }
+
+  &-title {
+    margin-bottom: 20px;
+
+    @include sm-block() {
+      margin-bottom: 10px;
+    }
+  }
+
+  &-browser {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px 75px;
+
+    @include md-block() {
+      margin: 0 -15px 45px;
+    }
+
+    &__tile {
+      width: 25%;
+      padding: 15px;
+
+      @include xs-block() {
+        width: 50%;
+      }
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 124px 0;
+      overflow: hidden;
+      text-align: center;
+      text-decoration: none;
+      transition: transform $time ease-in-out;
+      background: $white;
+
+      @include xs-block() {
+        padding: 60px 0;
+      }
+
+      @include xxs-block() {
+        padding: 30px 0;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &__img {
+      display: block;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 30px;
+      object-fit: contain;
+      object-position: center;
+
+      @include sm-block() {
+        margin-bottom: 15px;
+      }
+    }
+
+    &__name {
+      @include font(15);
+      text-transform: uppercase;
+      transition: color $time ease-in-out;
+
+      @include xxs-block() {
+        @include font(13);
+      }
+    }
+  }
+
+  &-contacts {
+    &__title {
+      margin-bottom: 20px;
+
+      @include sm-block() {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__tile {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__link {
+      color: $black;
+      text-decoration: none;
+      transition: color $time ease-in-out;
+
+      &:hover {
+        color: $active-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+$break_lg: 1440px;
+$break_md: 1280px;
+$break_xmd: 1152px;
+$break_sm: 1024px;
+$break_xs: 768px;
+$break_xxs: 600px;
+$break_xxxs: 450px;
+
+@mixin lg($name, $value) {
+  @media screen and (max-width: $break_lg) {
+    #{$name}: $value;
+  }
+}
+
+@mixin lg-block() {
+  @media screen and (max-width: $break_lg) {
+    @content;
+  }
+}
+
+@mixin md($name, $value) {
+  @media screen and (max-width: $break_md) {
+    #{$name}: $value;
+  }
+}
+
+@mixin md-block() {
+  @media screen and (max-width: $break_md) {
+    @content;
+  }
+}
+
+@mixin xmd($name, $value) {
+  @media screen and (max-width: $break_xmd) {
+    #{$name}: $value;
+  }
+}
+
+@mixin xmd-block() {
+  @media screen and (max-width: $break_xmd) {
+    @content;
+  }
+}
+
+@mixin sm($name, $value) {
+  @media screen and (max-width: $break_sm) {
+    #{$name}: $value;
+  }
+}
+
+@mixin sm-block() {
+  @media screen and (max-width: $break_sm) {
+    @content;
+  }
+}
+
+@mixin xs($name, $value) {
+  @media screen and (max-width: $break_xs) {
+    #{$name}: $value;
+  }
+}
+
+@mixin xs-block() {
+  @media screen and (max-width: $break_xs) {
+    @content;
+  }
+}
+
+@mixin xxs($name, $value) {
+  @media screen and (max-width: $break_xxs) {
+    #{$name}: $value;
+  }
+}
+
+@mixin xxs-block() {
+  @media screen and (max-width: $break_xxs) {
+    @content;
+  }
+}
+
+@mixin xxxs($name, $value) {
+  @media screen and (max-width: $break_xxxs) {
+    #{$name}: $value;
+  }
+}
+
+@mixin xxxs-block() {
+  @media screen and (max-width: $break_xxxs) {
+    @content;
+  }
+}
+
+@mixin from($min_width) {
+  @media screen and (min-width: $min_width) {
+    @content;
+  }
+}
+
+@mixin to($max_width) {
+  @media screen and (max-width: $max_width) {
+    @content;
+  }
+}
+
+@mixin from-to($min_width, $max_width) {
+  @media screen and (min-width: $min_width) and (max-width: $max_width) {
+    @content;
+  }
+}

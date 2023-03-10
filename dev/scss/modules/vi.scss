@@ -1,0 +1,1683 @@
+$vi-b: #000;
+$vi-w: #fff;
+$vi-bl: #c8e5ff;
+$vi-bd: #002d56;
+
+.vi-conf {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 1px solid $vi-b;
+  background-color: $vi-w;
+
+  @include sm-block() {
+    max-height: calc(var(--viewport-height) - var(--header-height));
+    overflow: auto;
+  }
+
+  &-head {
+    padding: 20px 80px 20px 20px;
+    border-bottom: 1px solid $vi-b;
+  }
+
+  &-body {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-option {
+    width: calc(100% / 4);
+    padding: 20px;
+
+    @media screen and (max-width: 1024px) {
+      width: calc(100% / 2);
+    }
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid $vi-b;
+
+      @media screen and (max-width: 1024px) {
+        border-right: none;
+      }
+
+      @media screen and (max-width: 600px) {
+        border-bottom: 1px solid $vi-b;
+      }
+    }
+
+    &:nth-child(2n + 1) {
+      @media screen and (max-width: 1024px) {
+        border-right: 1px solid $vi-b;
+      }
+
+      @media screen and (max-width: 600px) {
+        border-right: none;
+      }
+    }
+    &:nth-child(-n + 2) {
+      @media screen and (max-width: 1024px) {
+        border-bottom: 1px solid $vi-b;
+      }
+    }
+
+    &__name {
+      display: block;
+      font-size: 16px;
+      color: $vi-b;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .vi-conf-btn {
+      display: block;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      &--active {
+        background-color: $vi-b;
+        color: $vi-w;
+      }
+    }
+  }
+  &-btn {
+    display: inline-block;
+    border: 1px solid $vi-b;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 10px;
+    color: $vi-b;
+    text-align: center;
+
+    &[data-vi='ff1'] {
+      font-family: 'Arial', sans-serif;
+    }
+
+    &[data-vi='ff2'] {
+      font-family: 'Times New Roman', serif;
+    }
+
+    &[data-vi='fs1'] {
+      font-size: 22px;
+    }
+
+    &[data-vi='fs2'] {
+      font-size: 28px;
+    }
+
+    &[data-vi='ls1'] {
+      letter-spacing: 4px;
+    }
+
+    &[data-vi='ls2'] {
+      letter-spacing: 8px;
+    }
+  }
+  &-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 1px solid $vi-b;
+    padding: 7px;
+
+    .icon {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &--show {
+    display: block;
+  }
+}
+
+[class*='vi-'] {
+  img,
+  .mp-stock__item-label,
+  .mp-about__banner-img-main--lg::before {
+    filter: grayscale(1);
+  }
+
+  .about {
+    &-history {
+      background: none;
+      border: 1px solid;
+    }
+  }
+
+  [class*='ymaps-2'] {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale") !important;
+    /* Firefox 3.5+ */
+    -webkit-filter: grayscale(100%) !important;
+    /* Chrome 19+ & Safari 6+ */
+  }
+
+  .btn {
+    &-gradient {
+      background: none;
+      border: 1px solid;
+    }
+
+    &-vi {
+      @include hover() {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .header {
+    &-nav__link {
+      &._active {
+        font-weight: bold;
+      }
+    }
+
+    &-lang__list-item {
+      a {
+        &._active {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .mp-stock__item-price-main {
+    background: none;
+    -webkit-text-fill-color: unset;
+  }
+
+  .map-info__sidebar {
+    &-container {
+      box-shadow: none;
+    }
+  }
+
+  .contacts-data__info-item {
+    background: transparent;
+    border: 1px solid;
+  }
+
+  .form-bg {
+    background: none;
+    border: 1px solid;
+  }
+
+  .vacancies-invite__item {
+    background: none;
+    border: 1px solid;
+  }
+
+  .table {
+    table {
+      background: transparent;
+    }
+  }
+
+  .box-border-shadow {
+    box-shadow: none;
+  }
+
+  .menu {
+    &-link {
+      border: 1px solid;
+      background: transparent;
+    }
+  }
+
+  a {
+    @include hover() {
+      text-decoration: underline;
+    }
+  }
+
+  .swiper-button {
+    background: transparent;
+    border: 1px solid;
+  }
+
+  &[class*='ff0'] {
+  }
+
+  &[class*='ff1'] {
+    font-family: 'Arial';
+  }
+
+  &[class*='ff2'] {
+    font-family: 'Times New Roman';
+  }
+
+  &[class*='fs0'] {
+  }
+
+  &[class*='fs1'] {
+    font-size: 18px;
+  }
+
+  &[class*='fs2'] {
+    font-size: 20px;
+  }
+
+  &[class*='ls0'] {
+  }
+
+  &[class*='ls1'] {
+    letter-spacing: 0.025rem;
+  }
+
+  &[class*='ls2'] {
+    letter-spacing: 0.05rem;
+  }
+
+  &[class*='cs0'] {
+    // global
+    .btn {
+      &-gradient {
+        background-color: $vi-w;
+        border-color: $vi-b;
+        color: $vi-b;
+
+        .icon {
+          stroke: $vi-b;
+        }
+
+        @include hover() {
+          background-color: $vi-b;
+          color: $vi-w;
+        }
+      }
+
+      &-border {
+        border-color: $vi-b;
+
+        @include hover() {
+          border-color: $vi-b;
+          background-color: $vi-b;
+          color: $vi-w;
+
+          .icon {
+            stroke: $vi-w;
+          }
+        }
+      }
+
+      &-icon {
+        &:not(.btn-border) {
+          @include hover() {
+            color: $vi-b;
+
+            .icon {
+              stroke: $vi-b;
+            }
+          }
+        }
+
+        &.btn-gradient {
+          @include hover() {
+            color: $vi-w;
+
+            .icon {
+              stroke: $vi-w;
+            }
+          }
+        }
+      }
+
+      &-vi {
+        color: $vi-b;
+
+        @include hover() {
+          span {
+            color: $vi-b;
+          }
+
+          .icon {
+            stroke: $vi-b;
+          }
+        }
+      }
+
+      @include hover() {
+        border-color: $vi-b;
+      }
+    }
+
+    .link {
+      &--underline {
+        &::after {
+          background: $vi-b;
+        }
+      }
+
+      &-arrow {
+        .icon {
+          stroke: $vi-b;
+        }
+      }
+    }
+
+    .cross-style {
+      &::before,
+      &::after {
+        background-color: $vi-b;
+
+        @include hover() {
+          background-color: $vi-b;
+        }
+      }
+    }
+
+    .checkbox {
+      &-marker {
+        border-color: $vi-b;
+
+        &::after {
+          border-color: $vi-b;
+        }
+      }
+
+      [type='checkbox'] {
+        &:checked ~ .checkbox-marker {
+          border-color: $vi-b;
+        }
+      }
+    }
+
+    .swiper {
+      &-pagination-bullet {
+        &-active {
+          background-color: $vi-b;
+        }
+
+        @include hover() {
+          background-color: $vi-b;
+        }
+      }
+
+      &-button {
+        border-color: $vi-b;
+
+        .icon {
+          stroke: $vi-b;
+        }
+
+        @include hover() {
+          background-color: $vi-b;
+
+          .icon {
+            stroke: $vi-w;
+          }
+        }
+      }
+    }
+
+    .header {
+      border-color: $vi-b;
+
+      &-nav__link {
+        &._active {
+          color: $vi-b;
+        }
+
+        @include hover() {
+          color: $vi-b;
+        }
+
+        &::after {
+          background: $vi-b;
+        }
+      }
+
+      &-contacts__link {
+        &:after {
+          background: $vi-b;
+        }
+      }
+
+      &-lang__list-item {
+        &:before {
+          background: $vi-b;
+        }
+
+        a {
+          @include hover() {
+            color: $vi-b;
+          }
+
+          &._active {
+            color: $vi-b;
+          }
+        }
+      }
+    }
+
+    .footer {
+      background: $vi-w;
+      color: $vi-b;
+
+      &-info,
+      &-adress,
+      &-copyright,
+      &-dev {
+        color: $vi-b;
+      }
+
+      a {
+        color: $vi-b;
+
+        @include hover() {
+          color: $vi-b;
+        }
+      }
+    }
+
+    .menu {
+      &-link {
+        color: $vi-b;
+
+        .icon {
+          stroke: $vi-b;
+        }
+
+        &._active {
+          background: $vi-b;
+          color: $vi-w;
+
+          .icon {
+            stroke: $vi-w;
+          }
+        }
+
+        @include hover() {
+          background: $vi-b;
+          color: $vi-w;
+
+          .icon {
+            stroke: $vi-w;
+          }
+        }
+      }
+    }
+
+    .pagination {
+      &-button {
+        border-color: $vi-b;
+
+        &.active {
+          background: $vi-b;
+        }
+
+        @include hover() {
+          background-color: $vi-b;
+          color: $vi-w;
+        }
+
+        .icon {
+          stroke: $vi-b;
+        }
+      }
+
+      .icon {
+        stroke: $vi-b;
+      }
+    }
+
+    .text-page ul:not(.news-list, .gallery),
+    .ul-list {
+      & > li::before {
+        background: $vi-b;
+      }
+    }
+
+    .text-page ol,
+    .ol-list {
+      & > li::before {
+        color: $vi-b;
+      }
+    }
+
+    .mp-stock__item-price-main {
+      color: $vi-b;
+    }
+
+    .map {
+      &-info {
+        &__item {
+          border-color: $vi-b;
+
+          &-footer {
+            border-color: $vi-b;
+          }
+
+          .icon {
+            stroke: $vi-b;
+          }
+
+          a {
+            color: $vi-b;
+
+            @include hover() {
+              color: $vi-b;
+            }
+          }
+        }
+
+        &__sidebar {
+          &-container {
+            border-color: $vi-b;
+          }
+        }
+      }
+
+      .has-icon__icon {
+        .icon {
+          stroke: $vi-b;
+        }
+      }
+    }
+
+    .contacts {
+      &-map__info-text--gray {
+        color: $vi-b;
+      }
+
+      &-data__info {
+        &-item {
+          border-color: $vi-b;
+        }
+
+        &-list {
+          a {
+            color: $vi-w;
+
+            @include hover() {
+              color: $vi-w;
+            }
+          }
+        }
+
+        &-list {
+          a {
+            color: $vi-b;
+
+            @include hover() {
+              color: $vi-b;
+            }
+          }
+        }
+      }
+    }
+
+    .form-bg {
+      border-color: $vi-b;
+    }
+
+    .form-item {
+      [type='text'],
+      [type='tel'],
+      [type='email'],
+      [type='password'],
+      textarea,
+      select,
+      .jq-selectbox__select-text {
+        border-color: $vi-b;
+
+        @include placeholder() {
+          color: $vi-b;
+        }
+      }
+
+      &__name {
+        &.has-star {
+          &::before {
+            color: $vi-b;
+          }
+        }
+      }
+
+      &::after {
+        color: $vi-b;
+      }
+    }
+
+    .about {
+      &-links {
+        .btn {
+          border-color: $vi-b;
+        }
+      }
+
+      &-history__item {
+        border-color: $vi-b;
+      }
+
+      &-slider__slide-footer {
+        border-color: $vi-b;
+
+        a {
+          @include hover() {
+            color: $vi-b;
+          }
+        }
+      }
+    }
+
+    .vacancies {
+      &-invite__item {
+        border-color: $vi-b;
+
+        &-info {
+          border-color: $vi-b;
+        }
+
+        &-desc {
+          color: $vi-b;
+        }
+      }
+
+      &-study__row {
+        &:not(:last-child) {
+          border-color: $vi-b;
+        }
+      }
+    }
+
+    .map .dot-list__item::after {
+      background: $vi-b;
+    }
+
+    .table {
+      td,
+      th {
+        border-color: $vi-b;
+      }
+    }
+
+    .text-gray,
+    .text-gray-light {
+      color: $vi-b;
+    }
+
+    .box-border-shadow {
+      border-color: $vi-b;
+    }
+  }
+
+  &[class*='cs1'] {
+    .vi-conf {
+      background-color: $vi-b;
+      border-color: $vi-w;
+
+      &-head {
+        border-color: $vi-w;
+      }
+
+      &-option {
+        border-color: $vi-w;
+
+        &__name {
+          color: $vi-w;
+        }
+
+        .vi-conf-btn--active {
+          background-color: $vi-w;
+          color: $vi-b;
+        }
+      }
+
+      &-btn {
+        border-color: $vi-w;
+        color: $vi-w;
+      }
+
+      &-close {
+        border-color: $vi-w;
+
+        .icon {
+          fill: $vi-w;
+        }
+      }
+    }
+
+    body {
+      background: $vi-b;
+      color: $vi-w;
+    }
+
+    .btn {
+      &-gradient {
+        background-color: $vi-b;
+        border-color: $vi-w;
+        color: $vi-w;
+
+        .icon {
+          stroke: $vi-w;
+        }
+
+        @include hover() {
+          background-color: $vi-w;
+          color: $vi-b;
+        }
+      }
+
+      &-border {
+        border-color: $vi-w;
+        color: $vi-w;
+
+        .icon {
+          stroke: $vi-w;
+        }
+
+        @include hover() {
+          border-color: $vi-w;
+          background-color: $vi-w;
+          color: $vi-b;
+
+          .icon {
+            stroke: $vi-b;
+          }
+        }
+      }
+
+      &-icon {
+        color: $vi-w;
+
+        .icon {
+          stroke: $vi-w;
+        }
+
+        &:not(.btn-border) {
+          @include hover() {
+            color: $vi-w;
+
+            .icon {
+              stroke: $vi-w;
+            }
+          }
+        }
+
+        &.btn-gradient {
+          @include hover() {
+            color: $vi-b;
+
+            .icon {
+              stroke: $vi-b;
+            }
+          }
+        }
+      }
+
+      &-vi {
+        color: $vi-w;
+
+        .icon {
+          stroke: $vi-w;
+        }
+
+        @include hover() {
+          span {
+            color: $vi-w;
+          }
+
+          .icon {
+            stroke: $vi-w;
+          }
+        }
+      }
+
+      @include hover() {
+        border-color: $vi-w;
+      }
+    }
+
+    .link {
+      color: $vi-w;
+
+      &--underline {
+        &::after {
+          background: $vi-w;
+        }
+      }
+
+      &-arrow {
+        .icon {
+          stroke: $vi-w;
+        }
+      }
+    }
+
+    .cross-style {
+      &::before,
+      &::after {
+        background-color: $vi-b;
+
+        @include hover() {
+          background-color: $vi-b;
+        }
+      }
+    }
+
+    .checkbox {
+      &-marker {
+        border-color: $vi-w;
+
+        &::after {
+          border-color: $vi-w;
+        }
+      }
+
+      [type='checkbox'] {
+        &:checked ~ .checkbox-marker {
+          border-color: $vi-w;
+        }
+      }
+    }
+
+    .swiper {
+      &-pagination-bullet {
+        &-active {
+          background-color: $vi-w;
+        }
+
+        @include hover() {
+          background-color: $vi-w;
+        }
+      }
+
+      &-button {
+        border-color: $vi-w;
+
+        .icon {
+          stroke: $vi-w;
+        }
+
+        @include hover() {
+          background-color: $vi-w;
+
+          .icon {
+            stroke: $vi-b;
+          }
+        }
+      }
+    }
+
+    .header {
+      background: $vi-b;
+
+      &-nav__link {
+        color: $vi-w;
+
+        &._active {
+          color: $vi-w;
+        }
+
+        @include hover() {
+          color: $vi-w;
+        }
+
+        &::after {
+          background: $vi-w;
+        }
+      }
+
+      &-contacts__link {
+        &:after {
+          background: $vi-w;
+        }
+      }
+
+      &-lang__list-item {
+        color: $vi-w;
+
+        &:before {
+          background: $vi-w;
+        }
+
+        a {
+          @include hover() {
+            color: $vi-w;
+          }
+
+          &._active {
+            color: $vi-w;
+          }
+        }
+      }
+    }
+
+    .sidebar {
+      background: $vi-b;
+    }
+
+    .footer {
+      background: $vi-b;
+      color: $vi-w;
+
+      &-info,
+      &-adress,
+      &-copyright,
+      &-dev {
+        color: $vi-w;
+      }
+
+      a {
+        color: $vi-w;
+
+        @include hover() {
+          color: $vi-w;
+        }
+      }
+    }
+
+    .menu {
+      &-head {
+        &__text {
+          color: $vi-b;
+        }
+      }
+
+      &-link {
+        background: $vi-b;
+        color: $vi-w;
+
+        .icon {
+          stroke: $vi-w;
+        }
+
+        &._active {
+          background: $vi-w;
+          color: $vi-b;
+
+          .icon {
+            stroke: $vi-b;
+          }
+        }
+
+        @include hover() {
+          color: $vi-b;
+          background-color: $vi-w;
+
+          .icon {
+            stroke: $vi-b;
+          }
+        }
+      }
+    }
+
+    .pagination {
+      &-button {
+        border-color: $vi-w;
+        color: $vi-w;
+
+        &.active {
+          background: $vi-w;
+          color: $vi-b;
+        }
+
+        @include hover() {
+          background-color: $vi-w;
+          color: $vi-b;
+        }
+
+        .icon {
+          stroke: $vi-w;
+        }
+      }
+
+      .icon {
+        stroke: $vi-w;
+      }
+    }
+
+    .text-page {
+      ul:not(.news-list, .gallery),
+      .ul-list {
+        & > li::before {
+          background: $vi-w;
+        }
+      }
+
+      ol > li::before {
+        color: $vi-w;
+      }
+    }
+
+    .map {
+      &-info__item {
+        a {
+          color: $vi-w;
+
+          @include hover() {
+            color: $vi-w;
+          }
+        }
+      }
+
+      .has-icon__icon {
+        .icon {
+          stroke: $vi-w;
+        }
+      }
+    }
+
+    .mp-contacts__info-text {
+      background: $vi-b;
+    }
+
+    .map .dot-list__item::after,
+    .ul-list > li::before {
+      background: $vi-w;
+    }
+
+    .contacts {
+      &-map__info-text {
+        &--gray,
+        &--black {
+          color: $vi-w;
+        }
+      }
+
+      &-data__info {
+        &-item {
+          border-color: $vi-w;
+        }
+
+        &-list {
+          a {
+            color: $vi-w;
+
+            @include hover() {
+              color: $vi-w;
+            }
+          }
+        }
+      }
+    }
+
+    .form-bg {
+      border-color: $vi-w;
+    }
+
+    .form-item {
+      [type='text'],
+      [type='tel'],
+      [type='email'],
+      [type='password'],
+      textarea,
+      select,
+      .jq-selectbox__select-text {
+        border-color: $vi-w;
+        color: $vi-w;
+
+        @include placeholder() {
+          color: $vi-w;
+        }
+      }
+
+      .input-file {
+        color: $vi-w;
+
+        &__texе,
+        &__note {
+          color: $vi-w;
+        }
+      }
+
+      &__name {
+        color: $vi-w;
+
+        &.has-star {
+          &::before {
+            color: $vi-w;
+          }
+        }
+      }
+
+      &::after {
+        color: $vi-w;
+      }
+    }
+
+    .about {
+      &-history__item {
+        color: $vi-w;
+      }
+
+      &-slider__slide-footer {
+        border-color: $vi-w;
+
+        a {
+          @include hover() {
+            color: $vi-w;
+          }
+        }
+      }
+    }
+
+    .vacancies {
+      &-invite__item {
+        border-color: $vi-w;
+
+        &-info {
+          border-color: $vi-w;
+        }
+
+        &-desc {
+          color: $vi-w;
+        }
+      }
+    }
+
+    .table {
+      td,
+      th {
+        border-color: $vi-w;
+      }
+    }
+
+    .page-404__bg {
+      background: $vi-w;
+    }
+
+    .text-gray,
+    .text-gray-light,
+    .text-black,
+    .news-item__date,
+    .mp-stock__item-name,
+    .mp-stock__item-price-old,
+    .map-info__item-title-item,
+    .checkbox-text,
+    .bx-breadcrumb-item,
+    .text-page {
+      color: $vi-w;
+    }
+  }
+
+  &[class*='cs2'] {
+    body {
+      background: $vi-bl;
+      color: $vi-bd;
+    }
+
+    .btn {
+      &-gradient {
+        background-color: $vi-bl;
+        border-color: $vi-bd;
+        color: $vi-bd;
+
+        .icon {
+          stroke: $vi-bd;
+        }
+
+        @include hover() {
+          background-color: $vi-bd;
+          color: $vi-bl;
+        }
+      }
+
+      &-border {
+        border-color: $vi-bd;
+        color: $vi-bd;
+
+        .icon {
+          stroke: $vi-bd;
+        }
+
+        @include hover() {
+          border-color: $vi-bd;
+          background-color: $vi-bd;
+          color: $vi-bl;
+
+          .icon {
+            stroke: $vi-bl;
+          }
+        }
+      }
+
+      &-icon {
+        &:not(.btn-border) {
+          @include hover() {
+            color: $vi-bd;
+
+            .icon {
+              stroke: $vi-bd;
+            }
+          }
+        }
+
+        &.btn-gradient {
+          @include hover() {
+            color: $vi-bl;
+
+            .icon {
+              stroke: $vi-bl;
+            }
+          }
+        }
+      }
+
+      &-vi {
+        color: $vi-bd;
+
+        span {
+          color: $vi-bd;
+        }
+
+        .icon {
+          stroke: $vi-bd;
+        }
+
+        @include hover() {
+          span {
+            color: $vi-bd;
+          }
+
+          .icon {
+            stroke: $vi-bd;
+          }
+        }
+      }
+
+      @include hover() {
+        border-color: $vi-bd;
+      }
+    }
+
+    .link {
+      color: $vi-bd;
+
+      &--underline {
+        &::after {
+          background: $vi-bd;
+        }
+      }
+
+      &-arrow {
+        .icon {
+          stroke: $vi-bd;
+        }
+      }
+    }
+
+    .cross-style {
+      &::before,
+      &::after {
+        background-color: $vi-bl;
+
+        @include hover() {
+          background-color: $vi-bl;
+        }
+      }
+    }
+
+    .checkbox {
+      &-marker {
+        border-color: $vi-bd;
+
+        &::after {
+          border-color: $vi-bd;
+        }
+      }
+
+      [type='checkbox'] {
+        &:checked ~ .checkbox-marker {
+          border-color: $vi-bd;
+        }
+      }
+    }
+
+    .swiper {
+      &-pagination-bullet {
+        &-active {
+          background-color: $vi-bd;
+        }
+
+        @include hover() {
+          background-color: $vi-bd;
+        }
+      }
+
+      &-button {
+        border-color: $vi-bd;
+
+        .icon {
+          stroke: $vi-bd;
+        }
+
+        @include hover() {
+          background-color: $vi-bd;
+
+          .icon {
+            stroke: $vi-bl;
+          }
+        }
+      }
+    }
+
+    .header {
+      background: $vi-bl;
+      border-color: $vi-bd;
+
+      &-nav__link {
+        color: $vi-bd;
+
+        &._active {
+          color: $vi-bd;
+        }
+
+        @include hover() {
+          color: $vi-bd;
+        }
+
+        &::after {
+          background: $vi-bd;
+        }
+      }
+
+      &-contacts__link {
+        &:after {
+          background: $vi-bd;
+        }
+      }
+
+      &-lang__list-item {
+        color: $vi-bd;
+
+        &:before {
+          background: $vi-bd;
+        }
+
+        a {
+          @include hover() {
+            color: $vi-bd;
+          }
+
+          &._active {
+            color: $vi-bd;
+          }
+        }
+      }
+    }
+
+    .sidebar {
+      background: $vi-bl;
+    }
+
+    .footer {
+      background: $vi-bl;
+      color: $vi-bd;
+
+      &-info,
+      &-adress,
+      &-copyright,
+      &-dev {
+        color: $vi-bd;
+      }
+
+      a {
+        color: $vi-bd;
+
+        @include hover() {
+          color: $vi-bd;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .menu {
+      &-head {
+        &__text {
+          color: $vi-bl;
+        }
+      }
+
+      &-link {
+        background: $vi-bl;
+        color: $vi-bd;
+
+        .icon {
+          stroke: $vi-bd;
+        }
+
+        &._active {
+          background: $vi-bd;
+          color: $vi-bl;
+
+          .icon {
+            stroke: $vi-bl;
+          }
+        }
+
+        @include hover() {
+          color: $vi-bl;
+          background-color: $vi-bd;
+
+          .icon {
+            stroke: $vi-bl;
+          }
+        }
+      }
+    }
+
+    .pagination {
+      &-button {
+        border-color: $vi-bd;
+        color: $vi-bd;
+
+        &.active {
+          background: $vi-bd;
+          color: $vi-bl;
+        }
+
+        @include hover() {
+          background-color: $vi-bd;
+          color: $vi-bl;
+        }
+
+        .icon {
+          stroke: $vi-bd;
+        }
+      }
+
+      .icon {
+        stroke: $vi-bd;
+      }
+    }
+
+    .mp-contacts__info-text {
+      background: $vi-bl;
+    }
+
+    .ul-list > li::before,
+    .map .dot-list__item::after {
+      background: $vi-bd;
+    }
+
+    .text-page {
+      ul:not(.news-list, .gallery),
+      .ul-list {
+        & > li::before {
+          background: $vi-bd;
+        }
+      }
+
+      ol > li::before {
+        color: $vi-bd;
+      }
+    }
+
+    .map {
+      &-info {
+        &__item {
+          border-color: $vi-bd;
+
+          &-footer {
+            border-color: $vi-bd;
+          }
+
+          .icon {
+            stroke: $vi-bd;
+          }
+
+          a {
+            color: $vi-bd;
+
+            @include hover() {
+              color: $vi-bd;
+            }
+          }
+        }
+
+        &__sidebar {
+          &-container {
+            border-color: $vi-bd;
+          }
+        }
+      }
+
+      .has-icon__icon {
+        .icon {
+          stroke: $vi-bd;
+        }
+      }
+    }
+
+    .contacts-data__info {
+      &-item {
+        border-color: $vi-bd;
+      }
+
+      &-list {
+        a {
+          color: $vi-bd;
+
+          @include hover() {
+            color: $vi-bd;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .form-bg {
+      border-color: $vi-bd;
+    }
+
+    .form-item {
+      [type='text'],
+      [type='tel'],
+      [type='email'],
+      [type='password'],
+      textarea,
+      select,
+      .jq-selectbox__select-text {
+        border-color: $vi-bd;
+        color: $vi-bd;
+
+        @include placeholder() {
+          color: $vi-bd;
+        }
+      }
+
+      .input-file {
+        color: $vi-bd;
+
+        &__texе,
+        &__note {
+          color: $vi-bd;
+        }
+      }
+
+      &__name {
+        color: $vi-bd;
+
+        &.has-star {
+          &::before {
+            color: $vi-bd;
+          }
+        }
+      }
+
+      &::after {
+        color: $vi-bd;
+      }
+    }
+
+    .about {
+      &-links {
+        .btn {
+          border-color: $vi-bd;
+        }
+      }
+
+      &-history__item {
+        border-color: $vi-bd;
+      }
+
+      &-slider__slide-footer {
+        border-color: $vi-bd;
+
+        a {
+          @include hover() {
+            color: $vi-bd;
+          }
+        }
+      }
+    }
+
+    .vacancies {
+      &-invite__item {
+        border-color: $vi-bd;
+
+        &-info {
+          border-color: $vi-bd;
+        }
+
+        &-desc {
+          color: $vi-bd;
+        }
+      }
+
+      &-study__row {
+        &:not(:last-child) {
+          border-color: $vi-bd;
+        }
+      }
+    }
+
+    .table {
+      td,
+      th {
+        border-color: $vi-bd;
+      }
+    }
+
+    .page-404__bg {
+      background: $vi-bl;
+    }
+
+    .text-gray,
+    .text-gray-light,
+    .text-black,
+    .news-item__date,
+    .mp-stock__item-name,
+    .mp-stock__item-price-old,
+    .map-info__item-title-item,
+    .checkbox-text,
+    .bx-breadcrumb-item,
+    .text-page {
+      color: $vi-bd;
+    }
+
+    .box-border-shadow {
+      border-color: $vi-bd;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+include ../mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset='UTF-8')
+        title #{title}
+
+        meta(name="description" content="Название сайта")
+        meta(name="author" content="Media Line")
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+
+        <!-- ICO-->
+        link(rel="shortcut icon" type="image/png" href="./img/favicon/Atom100x100.png")
+        link(rel="apple-touch-icon" href="./img/favicon/Atom57x57.png")
+        link(rel="apple-touch-icon" sizes="72x72" href="./img/favicon/Atom72x72.png")
+        link(rel="apple-touch-icon" sizes="114x114" href="./img/favicon/Atom114x114.png")
+
+        link(rel="stylesheet" type='text/css' href="./css/critical.css")
+
+
+        //- link(rel="preload" href="./fonts/bold_eau-sans.ttf" as="font" crossorigin="")
+        //- link(rel="preload" href="./fonts/Book_Eau-Sans.ttf" as="font" crossorigin="")
+
+        //- <!--LIBS-CSS-->
+        //- link(rel="stylesheet" type='text/css' href="./libs/libs.min.css")
+
+        block libs-css
+        <!--MAIN-CSS -->
+        link(rel="stylesheet" type='text/css' href="./css/main.css")
+    body
+
+        block content
+
+        script(src="./libs/jquery.min.js")
+        script(src="./js/scripts/utils.js")
+        script(src="./js/scripts/const.js")
+        script(src="./libs/libs.min.js")
+        script(defer src="./js/scripts/fv.js")
+        script(defer src="./js/scripts/vi.js")
+        block libs-js
+        script(src="./js/scripts/scripts.js")
