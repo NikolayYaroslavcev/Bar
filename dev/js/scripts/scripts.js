@@ -167,14 +167,12 @@ sliderDots.forEach((dot, index) => {
 })
 // /swiper
 
-
-
-
 document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
 
 
 const logBlock = document.querySelector(".slider__wrap")
+// const content = document.querySelector(".slider").textContent;
 
 let x1 = null;
 let y1 = null;
@@ -184,8 +182,6 @@ function handleTouchStart(event) {
     const firstTouch = event.touches[0];
     x1 = firstTouch.clientX;
     y1 = firstTouch.clientY;
-    console.log(x1)
-    console.log(y1)
 }
 
 function handleTouchMove(event) {
@@ -198,19 +194,15 @@ function handleTouchMove(event) {
     let xDiff = x2 - x1;
     let yDiff = y2 - y1;
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
-        if (xDiff > 0) logBlock.textContent = ('right');
-        else logBlock.textContent = ('left');
-    } else {
-        if (yDiff > 0) logBlock.textContent = ('down');
-        else logBlock.textContent = ('top');
+        if (xDiff > 0) {
+            nextSlide()
+        }
+        else prevSlide();
     }
 
     x1 = null;
     y1 = null;
 }
-
-
-
 
 
 
