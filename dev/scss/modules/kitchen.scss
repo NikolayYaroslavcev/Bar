@@ -250,4 +250,20 @@
       }
     }
   }
+  .slider__btn-prev{
+    img{
+      @media (max-width: 769px) {
+        display: none;
+      }
+    }
+  }
+
+    .slider__btn-next{
+      img{
+        @media (max-width: 769px) {
+          display: none;
+        }
+      }
+
+  }
 }
