@@ -59,45 +59,6 @@ headerItem.forEach(item => {
 })
 
 
-
-///swiper
-//
-// document.addEventListener('touchstart', handleTouchStart, false);
-// document.addEventListener('touchmove', handleTouchMove, false);
-//
-//
-// const logBlock = document.querySelector(".slider-block")
-
-// let x1 = null;
-// let y1 = null;
-//
-// function handleTouchStart(event) {
-//     const firstTouch = event.touches[0];
-//     x1 = firstTouch.clientX;
-//     y1 = firstTouch.clientY;
-// }
-
-// function handleTouchMove(event) {
-//     if (!x1 || !y1) {
-//         return false
-//     }
-//     let x2 = event.touches[0].clientX
-//     let y2 = event.touches[0].clientY
-//     // console.log(x2,y2)
-//     let xDiff = x2 - x1;
-//     let yDiff = y2 - y1;
-//     if (Math.abs(xDiff) > Math.abs(yDiff)) {
-//         if (xDiff > 0) logBlock.textContent = ('right');
-//         else logBlock.textContent = ('left');
-//     } else {
-//         if (yDiff > 0) logBlock.textContent = ('down');
-//         else logBlock.textContent = ('top');
-//     }
-//
-//     x1 = null;
-//     y1 = null;
-// }
-
 ////s////s/s/s//s/s/s
 // Исходные данные по слайдеру (const)
 const sliderImages = document.querySelectorAll('.slider__wrap'),
@@ -171,29 +132,27 @@ document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
 
 
-const logBlock = document.querySelector(".slider__wrap")
-// const content = document.querySelector(".slider").textContent;
+// const logBlock = document.querySelector(".slider__wrap")
 
 let x1 = null;
-let y1 = null;
+// let y1 = null;
 
 
 function handleTouchStart(event) {
     const firstTouch = event.touches[0];
     x1 = firstTouch.clientX;
-    y1 = firstTouch.clientY;
+    // y1 = firstTouch.clientY;
 }
 
 function handleTouchMove(event) {
-    if (!x1 || !y1) {
+    if (!x1) {
         return false
     }
     let x2 = event.touches[0].clientX
-    let y2 = event.touches[0].clientY
-    console.log(x2,y2)
+    // let y2 = event.touches[0].clientY
     let xDiff = x2 - x1;
-    let yDiff = y2 - y1;
-    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+    // let yDiff = y2 - y1;
+    if (Math.abs(xDiff)) {
         if (xDiff > 0) {
             nextSlide()
         }
@@ -201,7 +160,7 @@ function handleTouchMove(event) {
     }
 
     x1 = null;
-    y1 = null;
+    // y1 = null;
 }
 
 
